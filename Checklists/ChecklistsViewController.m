@@ -34,6 +34,7 @@
     _row3text = @"Soccer practice";
     _row4text = @"Eat ice cream";
     
+    
     _row1checked = YES; _row2checked = YES; _row4checked = YES;
 }
 
