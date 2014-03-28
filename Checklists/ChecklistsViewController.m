@@ -18,6 +18,12 @@
     NSString *_row2text;
     NSString *_row3text;
     NSString *_row4text;
+    
+    BOOL _row0checked;
+    BOOL _row1checked;
+    BOOL _row2checked;
+    BOOL _row3checked;
+    BOOL _row4checked;
 }
 
 - (void)viewDidLoad {
@@ -51,10 +57,20 @@
     }
     return cell; }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    if (cell.accessoryType == UITableViewCellAccessoryNone) { cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    } else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
+{
+    UITableViewCell *cell = [tableView
+                             cellForRowAtIndexPath:indexPath];
+    BOOL isChecked = NO;
+    if (indexPath.row == 0) { isChecked = _row0checked; _row0checked = !_row0checked;
+    } else if (indexPath.row == 1) { isChecked = _row1checked; _row1checked = !_row1checked;
+    } else if (indexPath.row == 2) { isChecked = _row2checked; _row2checked = !_row2checked;
+    } else if (indexPath.row == 3) { isChecked = _row3checked; _row3checked = !_row3checked;
+    } else if (indexPath.row == 4) { isChecked = _row4checked; _row4checked = !_row4checked;
     }
+    if (isChecked) {
+        cell.accessoryType = UITableViewCellAccessoryNone;}
+    else {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        }
     [tableView deselectRowAtIndexPath:indexPath animated:YES]; }
 @end
