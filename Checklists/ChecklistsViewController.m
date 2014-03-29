@@ -45,7 +45,7 @@
                              dequeueReusableCellWithIdentifier:@"ChecklistItem"];
     UILabel *label = (UILabel *)[cell viewWithTag:1000];
     if (indexPath.row == 0) {
-        label.text = _row0item.text;
+        label.text = _row0item.text; 
     } else if (indexPath.row == 1) {
         label.text = _row1item.text;
     } else if (indexPath.row == 2) {
