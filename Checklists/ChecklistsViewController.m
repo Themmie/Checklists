@@ -20,18 +20,31 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _items = [[NSMutableArray alloc] initWithCapacity:20]; ChecklistItem *item;
-    item = [[ChecklistItem alloc] init]; item.text = @"Walk the dog"; item.checked = NO;
+    _items = [[NSMutableArray alloc] initWithCapacity:20];
+    ChecklistItem *item;
+    item = [[ChecklistItem alloc] init];
+    item.text = @"Walk the dog";
+    item.checked = NO;
     [_items addObject:item];
-    item = [[ChecklistItem alloc] init]; item.text = @"Brush my teeth"; item.checked = YES;
+    item = [[ChecklistItem alloc] init];
+    item.text = @"Brush my teeth";
+    item.checked = YES;
     [_items addObject:item];
-    item = [[ChecklistItem alloc] init]; item.text = @"Learn iOS development"; item.checked = YES;
+    item = [[ChecklistItem alloc] init];
+    item.text = @"Learn iOS development";
+    item.checked = YES;
     [_items addObject:item];
-    item = [[ChecklistItem alloc] init]; item.text = @"Soccer practice"; item.checked = NO;
+    item = [[ChecklistItem alloc] init];
+    item.text = @"Soccer practice";
+    item.checked = NO;
     [_items addObject:item];
-    item = [[ChecklistItem alloc] init]; item.text = @"Eat ice cream"; item.checked = YES;
+    item = [[ChecklistItem alloc] init];
+    item.text = @"Eat ice cream";
+    item.checked = YES;
     [_items addObject:item];
-    item = [[ChecklistItem alloc] init]; item.text = @"Call my gf"; item.checked = NO;
+    item = [[ChecklistItem alloc] init];
+    item.text = @"Call my gf";
+    item.checked = NO;
     [_items addObject:item];
 }
 - (void)didReceiveMemoryWarning
