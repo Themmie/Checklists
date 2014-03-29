@@ -42,32 +42,43 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     return [_items count]; }
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView
-                             dequeueReusableCellWithIdentifier:@"ChecklistItem"]; ChecklistItem *item = _items[indexPath.row];
-    UILabel *label = (UILabel *)[cell viewWithTag:1000]; label.text = item.text;
-    [self configureCheckmarkForCell:cell atIndexPath:indexPath]; return cell;
-}
 
-- (void)configureCheckmarkForCell:(UITableViewCell *)cell atIndexPath:(NSIndexPath *)indexPath
+- (void)configureCheckmarkForCell:(UITableViewCell *)cell withChecklistItem:(ChecklistItem *)item
 {
-    ChecklistItem *item = _items[indexPath.row];
     if (item.checked) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     } else {
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
 }
+- (void)configureTextForCell:(UITableViewCell *)cell withChecklistItem:(ChecklistItem *)item
+{
+    UILabel *label = (UILabel *)[cell viewWithTag:1000];
+    label.text = item.text;
+}
 
-- (void)tableView:(UITableView *)tableView
-        didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ChecklistItem"];
+    
+    ChecklistItem *item = _items[indexPath.row];
+    
+    [self configureTextForCell:cell withChecklistItem:item];
+    [self configureCheckmarkForCell:cell withChecklistItem:item];
+	
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView
                              cellForRowAtIndexPath:indexPath];
     ChecklistItem *item = _items[indexPath.row];
-    item.checked = !item.checked;
+    [item toggleChecked];
     
-    [self configureCheckmarkForCell:cell atIndexPath:indexPath];
-    [tableView deselectRowAtIndexPath:indexPath animated:YES]; }
+    [self configureCheckmarkForCell:cell withChecklistItem:item];
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
 @end
