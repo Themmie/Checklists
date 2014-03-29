@@ -8,22 +8,18 @@
 
 #import "ChecklistsViewController.h"
 
+#import "ChecklistItem.h"
+
 @interface ChecklistsViewController ()
 
 @end
 
 @implementation ChecklistsViewController {
-    NSString *_row0text;
-    NSString *_row1text;
-    NSString *_row2text;
-    NSString *_row3text;
-    NSString *_row4text;
-    
-    BOOL _row0checked;
-    BOOL _row1checked;
-    BOOL _row2checked;
-    BOOL _row3checked;
-    BOOL _row4checked;
+    ChecklistItem *_row0item;
+    ChecklistItem *_row1item;
+    ChecklistItem *_row2item;
+    ChecklistItem *_row3item;
+    ChecklistItem *_row4item;
 }
 
 - (void)viewDidLoad {
