@@ -22,6 +22,7 @@
 		5D2C16F418DB8C6900F9765F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5D2C16F218DB8C6900F9765F /* InfoPlist.strings */; };
 		5D2C16F618DB8C6900F9765F /* ChecklistsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2C16F518DB8C6900F9765F /* ChecklistsTests.m */; };
 		5D977E3918E634360069491B /* ChecklistItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D977E3818E634360069491B /* ChecklistItem.m */; };
+		5D977E3C18E778CD0069491B /* AddItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D977E3B18E778CD0069491B /* AddItemViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		5D2C16F518DB8C6900F9765F /* ChecklistsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChecklistsTests.m; sourceTree = "<group>"; };
 		5D977E3718E634360069491B /* ChecklistItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChecklistItem.h; sourceTree = "<group>"; };
 		5D977E3818E634360069491B /* ChecklistItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChecklistItem.m; sourceTree = "<group>"; };
+		5D977E3A18E778CD0069491B /* AddItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddItemViewController.h; path = ../AddItemViewController.h; sourceTree = "<group>"; };
+		5D977E3B18E778CD0069491B /* AddItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddItemViewController.m; path = ../AddItemViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,8 @@
 				5D2C16DC18DB8C6900F9765F /* Main.storyboard */,
 				5D2C16DF18DB8C6900F9765F /* ChecklistsViewController.h */,
 				5D2C16E018DB8C6900F9765F /* ChecklistsViewController.m */,
+				5D977E3A18E778CD0069491B /* AddItemViewController.h */,
+				5D977E3B18E778CD0069491B /* AddItemViewController.m */,
 				5D2C16E218DB8C6900F9765F /* Images.xcassets */,
 				5D2C16D118DB8C6900F9765F /* Supporting Files */,
 				5D977E3718E634360069491B /* ChecklistItem.h */,
@@ -258,6 +263,7 @@
 				5D2C16D718DB8C6900F9765F /* main.m in Sources */,
 				5D2C16DB18DB8C6900F9765F /* ChecklistsAppDelegate.m in Sources */,
 				5D2C16E118DB8C6900F9765F /* ChecklistsViewController.m in Sources */,
+				5D977E3C18E778CD0069491B /* AddItemViewController.m in Sources */,
 				5D977E3918E634360069491B /* ChecklistItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
