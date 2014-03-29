@@ -47,4 +47,9 @@
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return nil;
+}
+
 @end
