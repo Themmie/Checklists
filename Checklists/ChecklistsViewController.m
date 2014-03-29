@@ -24,16 +24,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _row0text = @"Walk the dog";
-    _row1text = @"Brush teeth";
-    _row2text = @"Learn iOS development";
-    _row3text = @"Soccer practice";
-    _row4text = @"Eat ice cream";
-    
-    
-    _row1checked = YES; _row2checked = YES; _row4checked = YES;
+    _row0item = [[ChecklistItem alloc] init]; _row0item.text = @"Walk the dog"; _row0item.checked = NO;
+    _row1item = [[ChecklistItem alloc] init]; _row1item.text = @"Brush my teeth"; _row1item.checked = YES;
+    _row2item = [[ChecklistItem alloc] init]; _row2item.text = @"Learn iOS development"; _row2item.checked = YES;
+    _row3item = [[ChecklistItem alloc] init]; _row3item.text = @"Soccer practice"; _row3item.checked = NO;
+    _row4item = [[ChecklistItem alloc] init]; _row4item.text = @"Eat ice cream"; _row4item.checked = YES;
 }
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -48,15 +44,16 @@
     UITableViewCell *cell = [tableView
                              dequeueReusableCellWithIdentifier:@"ChecklistItem"];
     UILabel *label = (UILabel *)[cell viewWithTag:1000];
-    if (indexPath.row == 0) { label.text = _row0text;
+    if (indexPath.row == 0) {
+        label.text = _row0item.text;
     } else if (indexPath.row == 1) {
-        label.text = _row1text;
+        label.text = _row1item.text;
     } else if (indexPath.row == 2) {
-        label.text = _row2text;
+        label.text = _row2item.text;
     } else if (indexPath.row == 3) {
-        label.text = _row3text;
+        label.text = _row3item.text;
     } else if (indexPath.row == 4) {
-        label.text = _row4text;
+        label.text = _row4item.text;
     }
     [self configureCheckmarkForCell:cell atIndexPath:indexPath];
     return cell; }
@@ -65,17 +62,12 @@
 {
     BOOL isChecked = NO;
     if (indexPath.row == 0) {
-        isChecked = _row0checked;
-    } else if (indexPath.row == 1) {
-        isChecked = _row1checked;
-    } else if (indexPath.row == 2) {
-        isChecked = _row2checked;
-    } else if (indexPath.row == 3) {
-        isChecked = _row3checked;
-    } else if (indexPath.row == 4) {
-        isChecked = _row4checked;
-    }
-    if (isChecked) {
+        isChecked = _row0item.checked;
+    } else if (indexPath.row == 1) { isChecked = _row1item.checked;
+    } else if (indexPath.row == 2) { isChecked = _row2item.checked;
+    } else if (indexPath.row == 3) { isChecked = _row3item.checked;
+    } else if (indexPath.row == 4) { isChecked = _row4item.checked;
+        }    if (isChecked) {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     } else {
         cell.accessoryType = UITableViewCellAccessoryNone;
@@ -83,16 +75,22 @@
     }
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+- (void)tableView:(UITableView *)tableView
+        didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView
                              cellForRowAtIndexPath:indexPath];
-    if (indexPath.row == 0) { _row0checked = !_row0checked;
-    } else if (indexPath.row == 1) { _row1checked = !_row1checked;
-    } else if (indexPath.row == 2) { _row2checked = !_row2checked;
-    } else if (indexPath.row == 3) { _row3checked = !_row3checked;
-    } else if (indexPath.row == 4) { _row4checked = !_row4checked;
+   if (indexPath.row == 0) {
+        _row0item.checked = !_row0item.checked;
+    } else if (indexPath.row == 1) {
+        _row1item.checked = !_row1item.checked;
+    } else if (indexPath.row == 2) {
+        _row2item.checked = !_row2item.checked;
+    } else if (indexPath.row == 3) {
+        _row3item.checked = !_row3item.checked;
+    } else if (indexPath.row == 4) {
+        _row4item.checked = !_row4item.checked;
     }
-    [self configureCheckmarkForCell:cell atIndexPath:indexPath];
-    [tableView deselectRowAtIndexPath:indexPath animated:YES]; }
+        [self configureCheckmarkForCell:cell atIndexPath:indexPath]; [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 @end
