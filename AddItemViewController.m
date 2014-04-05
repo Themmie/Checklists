@@ -61,4 +61,18 @@
     return nil;
 }
 
+- (BOOL)textField:(UITextField *)theTextField
+    shouldChangeCharactersInRange:(NSRange)range
+    replacementString:(NSString *)string
+{
+    NSString *newText = [theTextField.text
+            stringByReplacingCharactersInRange:range withString:string];
+    if ([newText length] > 0) {
+        self.doneBarButton.enabled = YES;
+    } else {
+        self.doneBarButton.enabled = NO;
+    }
+    return YES;
+}
 @end
+    
