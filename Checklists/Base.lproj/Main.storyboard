@@ -93,7 +93,7 @@
                                 <action selector="cancel" destination="GPw-Kc-hJo" id="LmG-iN-fs3"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="Uc6-6e-cVe">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" style="done" systemItem="done" id="Uc6-6e-cVe">
                             <connections>
                                 <action selector="done" destination="GPw-Kc-hJo" id="Hmk-dK-GbG"/>
                             </connections>
