@@ -70,9 +70,10 @@
                                                     <rect key="frame" x="20" y="7" width="280" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
                                                         <action selector="done" destination="GPw-Kc-hJo" eventType="editingDidEndOnExit" id="aTU-5l-cJv"/>
+                                                        <outlet property="delegate" destination="GPw-Kc-hJo" id="zGS-DR-Tlc"/>
                                                     </connections>
                                                 </textField>
                                             </subviews>
