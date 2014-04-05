@@ -67,11 +67,7 @@
 {
     NSString *newText = [theTextField.text
             stringByReplacingCharactersInRange:range withString:string];
-    if ([newText length] > 0) {
-        self.doneBarButton.enabled = YES;
-    } else {
-        self.doneBarButton.enabled = NO;
-    }
+    self.doneBarButton.enabled = ([newText length] > 0);
     return YES;
 }
 @end
