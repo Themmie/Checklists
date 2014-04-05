@@ -39,7 +39,7 @@
                     <navigationItem key="navigationItem" title="Checklists" id="w2g-yP-hnt">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="uro-Ib-m0k">
                             <connections>
-                                <segue destination="nmz-kv-clH" kind="modal" id="yi2-8m-scp"/>
+                                <segue destination="nmz-kv-clH" kind="modal" identifier="AddItem" id="yi2-8m-scp"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
