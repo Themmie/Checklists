@@ -40,10 +40,19 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.textField becomeFirstResponder]; }
+
 - (IBAction)cancel {
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 - (IBAction)done {
+    
+    NSLog(@"Contents of the text field: %@", self.textField.text);
+    
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
 }
 
