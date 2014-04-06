@@ -129,6 +129,13 @@ NSArray *indexPaths = @[indexPath];
     // 2
     AddItemViewController *controller = (AddItemViewController *)
     navigationController.topViewController; controller.delegate = self;
-    }
+        } else if ([segue.identifier isEqualToString:@"EditItem"])
+        {
+            UINavigationController *navigationController = segue.destinationViewController;
+            AddItemViewController *controller = (AddItemViewController *)
+            navigationController.topViewController; controller.delegate = self;
+            NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+            controller.itemToEdit = _items[indexPath.row];
+        }
 }
 @end

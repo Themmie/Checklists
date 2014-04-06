@@ -36,7 +36,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="nmz-kv-clH" kind="modal" trigger="accessoryAction" id="nB7-d9-Azf"/>
+                                    <segue destination="nmz-kv-clH" kind="modal" identifier="EditItem" trigger="accessoryAction" id="nB7-d9-Azf"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
