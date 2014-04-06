@@ -58,13 +58,13 @@
 
 - (void)configureCheckmarkForCell:(UITableViewCell *)cell withChecklistItem:(ChecklistItem *)item
 {
-    if (item.checked) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    UILabel *label = (UILabel *)[cell viewWithTag:1001];
+    if (item.checked) { label.text = @"√";
     } else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
+        label.text = @"";
     }
 }
-- (void)configureTextForCell:(UITableViewCell *)cell withChecklistItem:(ChecklistItem *)item
+￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼- (void)configureTextForCell:(UITableViewCell *)cell withChecklistItem:(ChecklistItem *)item
 {
     UILabel *label = (UILabel *)[cell viewWithTag:1000];
     label.text = item.text;
