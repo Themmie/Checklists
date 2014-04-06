@@ -57,14 +57,18 @@
     [self.delegate addItemViewControllerDidCancel:self];
 }
 
-- (IBAction)done
-{
-    ChecklistItem *item = [[ChecklistItem alloc] init];
-    item.text = self.textField.text;
-    item.checked = NO;
-    
-    [self.delegate addItemViewController:self
-                     didFinishAddingItem:item];
+- (IBAction)done {
+    if (self.itemToEdit == nil) {
+        ChecklistItem *item = [[ChecklistItem alloc] init];
+        item.text = self.textField.text;
+        item.checked = NO;
+        [self.delegate addItemViewController:self didFinishAddingItem:item];
+    } else
+    {
+        self.itemToEdit.text = self.textField.text;
+        [self.delegate addItemViewController:self
+                        didFinishEditingItem:self.itemToEdit];
+    }
 }
 
 - (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath

@@ -138,4 +138,15 @@ NSArray *indexPaths = @[indexPath];
             controller.itemToEdit = _items[indexPath.row];
         }
 }
+- (void)addItemViewController:
+(AddItemViewController *)controller
+         didFinishEditingItem:(ChecklistItem *)item
+{
+    NSInteger index = [_items indexOfObject:item];
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:index inSection:0];
+    UITableViewCell *cell =
+    [self.tableView cellForRowAtIndexPath:indexPath];
+    [self configureTextForCell:cell withChecklistItem:item];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

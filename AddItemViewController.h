@@ -9,11 +9,18 @@
 #import <UIKit/UIKit.h>
 
 @class AddItemViewController; @class ChecklistItem;
-@protocol AddItemViewControllerDelegate <NSObject> - (void)addItemViewControllerDidCancel:
+@protocol AddItemViewControllerDelegate <NSObject>
+
+- (void)addItemViewControllerDidCancel:
 (AddItemViewController *)controller;
+
 - (void)addItemViewController:
 (AddItemViewController *)controller
           didFinishAddingItem:(ChecklistItem *)item;
+
+- (void)addItemViewController:
+(AddItemViewController *)controller
+         didFinishEditingItem:(ChecklistItem *)item;
 @end
 
 @interface AddItemViewController : UITableViewController <UITextFieldDelegate>
