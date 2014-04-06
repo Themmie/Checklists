@@ -64,7 +64,7 @@
         label.text = @"";
     }
 }
-￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼￼- (void)configureTextForCell:(UITableViewCell *)cell withChecklistItem:(ChecklistItem *)item
+-(void)configureTextForCell:(UITableViewCell *)cell withChecklistItem:(ChecklistItem *)item
 {
     UILabel *label = (UILabel *)[cell viewWithTag:1000];
     label.text = item.text;
