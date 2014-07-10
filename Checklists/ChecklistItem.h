@@ -2,7 +2,7 @@
 //  ChecklistItem.h
 //  Checklists
 //
-//  Created by Tyler Hemmie on 3/28/14.
+//  Created by Tyler Hemmie on 3/29/14.
 //  Copyright (c) 2014 Tyler Hemmie. All rights reserved.
 //
 
@@ -14,6 +14,5 @@
 @property (nonatomic, assign) BOOL checked;
 
 - (void)toggleChecked;
-
 
 @end

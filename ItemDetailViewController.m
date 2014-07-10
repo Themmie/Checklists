@@ -6,14 +6,14 @@
 //  Copyright (c) 2014 Tyler Hemmie. All rights reserved.
 //
 
-#import "itemDetailViewController.h"
+#import "ItemDetailViewController.h"
 #import "ChecklistItem.h"
 
-@interface itemDetailViewController ()
+@interface ItemDetailViewController ()
 
 @end
 
-@implementation itemDetailViewController
+@implementation ItemDetailViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -54,7 +54,7 @@
     [self.textField becomeFirstResponder]; }
 
 - (IBAction)cancel {
-    [self.delegate itemDetailViewControllerDidCancel:self];
+    [self.delegate ItemDetailViewControllerDidCancel:self];
 }
 
 - (IBAction)done {
@@ -62,11 +62,11 @@
         ChecklistItem *item = [[ChecklistItem alloc] init];
         item.text = self.textField.text;
         item.checked = NO;
-        [self.delegate itemDetailViewController:self didFinishAddingItem:item];
+        [self.delegate ItemDetailViewController:self didFinishAddingItem:item];
     } else
     {
         self.itemToEdit.text = self.textField.text;
-        [self.delegate itemDetailViewController:self
+        [self.delegate ItemDetailViewController:self
                         didFinishEditingItem:self.itemToEdit];
     }
 }
