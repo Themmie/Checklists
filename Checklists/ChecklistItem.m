@@ -10,11 +10,9 @@
 
 @implementation ChecklistItem
 
-
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
-    if ((self = [super init]))
-    {
+    if ((self = [super init])) {
         self.text = [aDecoder decodeObjectForKey:@"Text"];
         self.checked = [aDecoder decodeBoolForKey:@"Checked"];
     }
@@ -31,6 +29,5 @@
 {
     self.checked = !self.checked;
 }
-
 
 @end

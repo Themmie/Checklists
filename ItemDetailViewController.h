@@ -13,22 +13,19 @@
 
 @protocol ItemDetailViewControllerDelegate <NSObject>
 
-- (void)ItemDetailViewControllerDidCancel:
-(ItemDetailViewController *)controller;
+- (void)ItemDetailViewControllerDidCancel:(ItemDetailViewController *)controller;
 
-- (void)ItemDetailViewController:
-(ItemDetailViewController *)controller
-          didFinishAddingItem:(ChecklistItem *)item;
+- (void)ItemDetailViewController:(ItemDetailViewController *)controller didFinishAddingItem:(ChecklistItem *)item;
 
-- (void)ItemDetailViewController:
-(ItemDetailViewController *)controller
-         didFinishEditingItem:(ChecklistItem *)item;
+- (void)ItemDetailViewController:(ItemDetailViewController *)controller didFinishEditingItem:(ChecklistItem *)item;
+
 @end
 
 @interface ItemDetailViewController : UITableViewController <UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *doneBarButton;
+
 @property (nonatomic, weak) id <ItemDetailViewControllerDelegate> delegate;
 @property (nonatomic, strong) ChecklistItem *itemToEdit;
 

@@ -126,9 +126,9 @@
 				5D977E3A18E778CD0069491B /* ItemDetailViewController.h */,
 				5D977E3B18E778CD0069491B /* ItemDetailViewController.m */,
 				5D2C16E218DB8C6900F9765F /* Images.xcassets */,
-				5D2C16D118DB8C6900F9765F /* Supporting Files */,
 				5D977E3718E634360069491B /* ChecklistItem.h */,
 				5D977E3818E634360069491B /* ChecklistItem.m */,
+				5D2C16D118DB8C6900F9765F /* Supporting Files */,
 			);
 			path = Checklists;
 			sourceTree = "<group>";
